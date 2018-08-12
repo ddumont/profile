@@ -1,0 +1,16 @@
+[user]
+        email = ddumont@gmail.com
+        name = Dan Dumont
+[core]
+        autocrlf = input
+[diff]
+        tool = bc4
+[difftool "bc4"]
+        trustExitCode = true
+        cmd = BComp.exe \"`echo $LOCAL | sed 's_/mnt/c_C:_'`\" \"`echo $REMOTE | sed 's_/mnt/c_C:_'`\"
+[core]
+        autocrlf = input
+[merge]
+        tool = bc4
+[mergetool "bc4"]
+        cmd = BComp.exe \"`echo $LOCAL | sed 's_/mnt/c_C:_'`\" \"`echo $REMOTE | sed 's_/mnt/c_C:_'`\" \"`echo $REMOTE | sed 's_/mnt/c_C:_'`\" \"`echo $MERGED | sed 's_/mnt/c_C:_'`\"
