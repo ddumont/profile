@@ -1,8 +1,7 @@
 #!/bin/bash
-
-pushd ~ > /dev/null
+pushd $HOME > /dev/null
 pushd .ssh > /dev/null
-keychain --clear id_rsa
+keychain --agents "ssh,gpg" id_rsa canofsleep ftrees
 popd > /dev/null
-. .keychain/$HOSTNAME-sh
+source .keychain/$HOSTNAME-sh
 popd > /dev/null
